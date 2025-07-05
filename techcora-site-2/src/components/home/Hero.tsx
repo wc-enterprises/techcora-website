@@ -1,8 +1,7 @@
-import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-export default function Hero({ scrollToSection }) {
+export default function Hero({ scrollToSection }: { scrollToSection: (sectionId: string) => void }) {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}

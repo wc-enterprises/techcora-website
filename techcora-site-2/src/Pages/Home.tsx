@@ -1,9 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, ArrowRight, Code, Cpu, Users, Target, Eye, Lightbulb, CheckCircle, Send } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent } from '@/components/ui/card';
+import { useState, useEffect } from 'react';
 
 import Navigation from '../components/home/Navigation';
 import Hero from '../components/home/Hero';
@@ -41,7 +36,7 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
