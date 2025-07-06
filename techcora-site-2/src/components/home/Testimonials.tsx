@@ -48,6 +48,24 @@ const testimonials: Testimonial[] = [
     name: "Irish",
     role: "CEO - Teknova Consultancy, Qatar",
   },
+  {
+    id: 5,
+    stars: "/clients/5star.svg",
+    quote:
+      "Techcora helped us launch a modern, efficient retail ecosystem. Their quick commerce app and POS system streamlined our operations and greatly enhanced the shopping experience for our customers.",
+    image: "/clients/chikpuk.png",
+    name: "Founder",
+    role: "Founder , Chikpuk",
+  },
+  {
+    id: 6,
+    stars: "/clients/5star.svg",
+    quote:
+      "Techcora built an intuitive and reliable system that transformed how we manage our pool inventory. Real-time tracking and smart alerts have made our operations more efficient and hassle-free.",
+    image: "/clients/sapir_group.jpeg",
+    name: "Saji Abraham",
+    role: "CEO - Sapir Group, Qatar",
+  }
 ];
 
 const TestimonialsCarouselSection: React.FC = () => {
