@@ -58,7 +58,7 @@ export default function Industries() {
         <div className="grid md:grid-cols-2 gap-8">
           {industries.map((industry, index) => (
             <div key={index} className="group">
-              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-80 lg:h-96">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-110 lg:h-96">
                 
                 {/* Single Component with 50/50 Split - Alternating Layout */}
                 <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} h-full`}>
@@ -96,7 +96,7 @@ export default function Industries() {
                         {industry.title}
                       </h3>
                       
-                      <p className="text-gray-600 mb-8 leading-relaxed text-md line-clamp-5">
+                      <p className="text-gray-600 mb-4 lg:mb-8 leading-relaxed text-sm lg:text-md line-clamp-3 lg:line-clamp-5">
                         {industry.description}
                       </p>
                       
@@ -106,7 +106,7 @@ export default function Industries() {
                         {industry.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-start">
                             <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-1.5 mr-2 flex-shrink-0"></div>
-                            <span className="text-gray-700 text-md leading-tight">
+                            <span className="text-gray-700 text-sm lg:text-md leading-tight">
                               {feature}
                             </span>
                           </div>
