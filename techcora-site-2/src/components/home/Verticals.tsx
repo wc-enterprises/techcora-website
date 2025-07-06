@@ -68,13 +68,13 @@ export default function Verticals() {
                     ))}
                   </div>
 
-                  <Button 
+                  {/* <Button 
                     variant="outline" 
                     className="group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-all duration-300"
                   >
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </div>

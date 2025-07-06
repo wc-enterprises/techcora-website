@@ -48,14 +48,14 @@ export default function Hero({ scrollToSection }: { scrollToSection: (sectionId:
               Start Your Project
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button
+            {/* <Button
               onClick={() => scrollToSection('about')}
               variant="outline"
               className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 group"
             >
               <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
               Learn More
-            </Button>
+            </Button> */}
           </div>
 
           {/* Stats */}
