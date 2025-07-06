@@ -104,19 +104,13 @@ const TestimonialsCarouselSection: React.FC = () => {
               <span className="absolute inset-0 bg-gradient-to-r from-orange-400/30 via-orange-500/40 to-orange-600/30 backdrop-blur-md border border-orange-400/50 rounded-lg shadow-lg animate-pulse group-hover:animate-none group-hover:from-orange-400/50 group-hover:via-orange-500/60 group-hover:to-orange-600/50 transition-all duration-700 blur-sm"></span>
               
               {/* Glow effect */}
-              <span className="absolute inset-0 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 rounded-lg opacity-30 animate-glow-pulse group-hover:animate-none blur-md"></span>
+              {/* <span className="absolute inset-0 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 rounded-lg opacity-30 animate-glow-pulse group-hover:animate-none blur-md"></span> */}
               
               {/* Main text with shimmer */}
-              <span className="relative z-10 font-extrabold px-3 py-1 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 animate-shimmer-text group-hover:animate-none">
+              <span className="relative z-10 font-extrabold px-3 py-1 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 TECHCORA
               </span>
-              
-              {/* Sparkle overlay */}
-              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="absolute top-1 right-1 w-1 h-1 bg-white rounded-full animate-ping"></span>
-                <span className="absolute bottom-1 left-1 w-1 h-1 bg-white rounded-full animate-ping animation-delay-500"></span>
-              </span>
-            </span>'s
+            </span>
             presentation design services.
           </p>
           <img
