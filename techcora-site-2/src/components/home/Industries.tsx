@@ -10,33 +10,27 @@ export default function Industries() {
   const industries = [
     {
       icon: ShoppingCart,
-      title: "Retail",
+      title: "Retail & E-commerce",
       description: "Modern retail solutions including POS systems, inventory management, and customer analytics.",
-      features: ["Point of Sale", "Inventory Management", "Customer Analytics", "Omnichannel Solutions"]
-    },
-    {
-      icon: Globe,
-      title: "E-commerce",
-      description: "Comprehensive e-commerce platforms with seamless shopping experiences and payment integration.",
-      features: ["Online Stores", "Payment Gateway", "Mobile Shopping", "Order Management"]
+      features: ["Point of Sale", "Inventory Management", "Customer-facing mobile app", "Customer-facing website"]
     },
     {
       icon: CreditCard,
       title: "Fintech",
       description: "Secure financial technology solutions including payment processing and digital banking.",
-      features: ["Digital Payments", "Banking Solutions", "Fraud Detection", "Compliance Tools"]
-    },
-    {
-      icon: Wifi,
-      title: "IoT",
-      description: "Internet of Things solutions connecting devices and enabling smart automation.",
-      features: ["Device Connectivity", "Smart Sensors", "Data Analytics", "Remote Monitoring"]
+      features: ["Secure Payment Platforms", "Digital Wallets", "Transaction processing systems"]
     },
     {
       icon: Truck,
-      title: "Logistics",
-      description: "Supply chain and logistics optimization through technology and automation.",
-      features: ["Fleet Management", "Route Optimization", "Warehouse Automation", "Tracking Systems"]
+      title: "Logistics & Fleet Management",
+      description: "Logistics and fleet management solutions including GPS tracking, route optimization, and real-time fleet monitoring.",
+      features: ["GPS tracking", "Route optimization", "Real-time fleet monitoring Solutions"]
+    },
+    {
+      icon: Wifi,
+      title: "IoT & Robotics",
+      description: "Internet of Things solutions connecting devices and enabling smart automation.",
+      features: ["Intelligent Systems", "Smart operations", "Remote Monitoring"]
     }
   ];
 
