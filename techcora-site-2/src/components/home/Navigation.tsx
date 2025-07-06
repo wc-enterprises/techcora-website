@@ -37,9 +37,27 @@ export default function Navigation({ activeSection, scrollToSection }: { activeS
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection('hero')}
-              className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent hover:from-orange-600 hover:to-orange-700 transition-all duration-300"
+              className="flex items-center hover:opacity-80 transition-opacity duration-300"
             >
-              Techcora
+              <div className="relative">
+                <img
+                  src="/Techcora Logo.svg"
+                  alt="Techcora"
+                  className="h-8 w-auto"
+                />
+                {/* Text overlay that appears black when scrolled */}
+                {isScrolled && (
+                  <div 
+                    className="absolute inset-0 h-8 w-auto transition-opacity duration-300"
+                    style={{
+                      background: `url("/Techcora Logo.svg") no-repeat`,
+                      backgroundSize: 'contain',
+                      filter: 'brightness(0) saturate(100%)',
+                      clipPath: 'polygon(40% 0%, 100% 0%, 100% 100%, 20% 100%)'
+                    }}
+                  />
+                )}
+              </div>
             </button>
           </div>
 

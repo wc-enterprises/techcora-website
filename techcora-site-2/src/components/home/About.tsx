@@ -76,8 +76,8 @@ export default function About() {
             />
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-orange-500 rounded-full flex items-center justify-center z-20">
               <div className="text-white text-center">
-                <div className="text-2xl font-bold">5+</div>
-                <div className="text-sm">Years</div>
+                <div className="text-2xl font-bold">18+</div>
+                <div className="text-sm">Months</div>
               </div>
             </div>
           </div>

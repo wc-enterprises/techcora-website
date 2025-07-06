@@ -25,13 +25,11 @@ export default function MissionVision() {
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
               
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                To empower businesses with innovative software solutions and cutting-edge robotics 
-                that drive efficiency, growth, and competitive advantage in the digital age.
+              To build the best team of engineers and individuals, creating world class products at lightening speed We're not just building tech
               </p>
               
               <p className="text-lg text-gray-600 leading-relaxed">
-                We are committed to delivering exceptional value through technology that transforms 
-                how our clients operate, compete, and succeed in their respective industries.
+              — we're building a legacy.
               </p>
               
               <div className="mt-8 grid sm:grid-cols-2 gap-4">
@@ -66,13 +64,11 @@ export default function MissionVision() {
               <h3 className="text-2xl md:text-3xl font-bold mb-6">Our Vision</h3>
               
               <p className="text-lg text-white/90 mb-6 leading-relaxed">
-                To be the global leader in transformative technology solutions, pioneering the 
-                future of software development and robotics across all industries.
+              To Lead IndiaTo Supremacy (LiTS) by creating groundbreaking products at the cutting edge of technology.
               </p>
               
               <p className="text-lg text-white/90 leading-relaxed">
-                We envision a world where technology seamlessly integrates with human potential, 
-                creating unprecedented opportunities for innovation and progress.
+              We aim to uplift India's greatness, restore its historic greatness by extending our innovations to solve global challenges.
               </p>
               
               <div className="mt-8 grid sm:grid-cols-2 gap-4">

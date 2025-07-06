@@ -3,8 +3,9 @@ import {
   Search, 
   Award, 
   Users, 
-  Shield,
-  CheckCircle 
+  ShieldCheck,
+  CheckCircle,
+  Clock 
 } from 'lucide-react';
 
 export default function WhyChooseUs() {
@@ -24,7 +25,7 @@ export default function WhyChooseUs() {
     {
       icon: Award,
       title: "Excellence",
-      description: "We maintain the highest standards in everything we do, from code quality to client service.",
+      description: "from code quality to client service. We settle for nothing less than world-class.",
       color: "bg-orange-500"
     },
     {
@@ -34,10 +35,16 @@ export default function WhyChooseUs() {
       color: "bg-green-500"
     },
     {
-      icon: Shield,
+      icon: ShieldCheck,
       title: "Responsibility",
       description: "We take ownership of our work and are committed to delivering on our promises.",
       color: "bg-purple-500"
+    },
+    {
+      icon: Clock,
+      title: "Responsibility",
+      description: "24/7 support and maintenance services",
+      color: "bg-yellow-500"
     }
   ];
 
@@ -85,9 +92,8 @@ export default function WhyChooseUs() {
               </h3>
               <div className="space-y-4">
                 {[
-                  "Proven track record with 500+ successful projects",
+                  "Proven track record with 30+ successful projects",
                   "Agile development methodology for faster delivery",
-                  "24/7 support and maintenance services",
                   "Competitive pricing with transparent billing",
                   "Expert team with cutting-edge technology expertise",
                   "Scalable solutions that grow with your business"
