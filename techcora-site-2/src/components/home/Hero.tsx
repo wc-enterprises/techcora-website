@@ -5,7 +5,7 @@ export default function Hero({ scrollToSection }: { scrollToSection: (sectionId:
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-500 via-orange-600 to-red-700">
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-100 via-orange-400 to-orange-100">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
       </div>
@@ -61,16 +61,16 @@ export default function Hero({ scrollToSection }: { scrollToSection: (sectionId:
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">500+</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">30+</div>
               <div className="text-white/80 text-sm">Projects Delivered</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">50+</div>
-              <div className="text-white/80 text-sm">Happy Clients</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">7+</div>
+              <div className="text-white/80 text-sm">Countries</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">5+</div>
-              <div className="text-white/80 text-sm">Years Experience</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">18+</div>
+              <div className="text-white/80 text-sm">Months Experience</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">24/7</div>
