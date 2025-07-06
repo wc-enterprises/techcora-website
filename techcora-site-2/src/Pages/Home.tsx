@@ -11,6 +11,7 @@ import Team from '../components/home/Team';
 import Industries from '../components/home/Industries';
 import Contact from '../components/home/Contact';
 import Footer from '../components/home/Footer';
+import Testimonials from '../components/home/Testimonials';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -52,6 +53,7 @@ export default function Home() {
       <MissionVision />
       <Verticals />
       <Services />
+      <Testimonials />
       <WhyChooseUs />
       <Team />
       <Industries />
