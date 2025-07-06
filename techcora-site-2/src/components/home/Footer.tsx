@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Youtube, Github, Instagram, X } from 'lucide-react';
 
 export default function Footer({ scrollToSection }: { scrollToSection: (sectionId: string) => void }) {
   const currentYear = new Date().getFullYear();
@@ -27,10 +27,11 @@ export default function Footer({ scrollToSection }: { scrollToSection: (sectionI
   };
 
   const socialLinks = [
-    { icon: Linkedin, href: 'https://www.linkedin.com/company/techcora', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Instagram, href: '#', label: 'Instagram' }
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/techcora/', label: 'LinkedIn' },
+    // { icon: Github, href: 'https://github.com/techcora', label: 'GitHub' },
+    { icon: X, href: 'https://x.com/Techcora', label: 'X' },
+    { icon: Youtube, href: 'https://www.youtube.com/@techcora', label: 'Youtube' },
+    { icon: Instagram, href: 'https://www.instagram.com/techcora/', label: 'Instagram' }
   ];
 
   return (
