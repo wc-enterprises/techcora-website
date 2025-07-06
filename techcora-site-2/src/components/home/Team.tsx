@@ -1,4 +1,4 @@
-import { Linkedin, Github, Twitter } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 export default function Team() {
   const teamMembers = [

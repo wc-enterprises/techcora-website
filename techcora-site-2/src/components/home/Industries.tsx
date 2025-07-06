@@ -1,6 +1,5 @@
 import { 
   ShoppingCart, 
-  Globe, 
   CreditCard, 
   Wifi, 
   Truck 
