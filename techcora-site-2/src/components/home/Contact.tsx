@@ -37,20 +37,20 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email",
-      value: "hello@Techcora.com",
-      link: "mailto:hello@Techcora.com"
+      value: "info@techcoracorp.com",
+      link: "mailto:info@techcoracorp.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: ["+91 6382331539", "+91 6374087443", "+91 8248495913"],
+      link: ["tel:+916382331539", "tel:+916374087443", "tel:+918248495913"]
     },
     {
       icon: MapPin,
       title: "Address",
-      value: "123 Tech Street, Innovation City, IC 12345",
-      link: "https://maps.google.com"
+      value: "C2-104, Akshaya The Belvedere, Guduvancheri, Chennai, Tamil Nadu, India",
+      link: "https://maps.app.goo.gl/texJmEnwDrD9DSKx6"
     }
   ];
 
@@ -88,12 +88,27 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
-                    <a 
-                      href={info.link}
-                      className="text-gray-600 hover:text-orange-500 transition-colors duration-300"
-                    >
-                      {info.value}
-                    </a>
+                    {Array.isArray(info.value) ? (
+                      <div className="space-y-1">
+                        {info.value.map((phone, phoneIndex) => (
+                          <div key={phoneIndex}>
+                            <a 
+                              href={Array.isArray(info.link) ? info.link[phoneIndex] : info.link}
+                              className="text-gray-600 hover:text-orange-500 transition-colors duration-300 block"
+                            >
+                              {phone}
+                            </a>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <a 
+                        href={Array.isArray(info.link) ? info.link[0] : info.link}
+                        className="text-gray-600 hover:text-orange-500 transition-colors duration-300"
+                      >
+                        {info.value}
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}
@@ -101,11 +116,17 @@ export default function Contact() {
 
             {/* Map placeholder */}
             <div className="mt-12">
-              <div className="w-full h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-8 w-8 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-500">Interactive Map</p>
-                </div>
+              <div className="w-full h-64 rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1944.9110266963332!2d80.06776390026523!3d12.854767195941976!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f64e5419c70d%3A0x3ef599625188bd57!2sAkshaya%20The%20Belvedere!5e0!3m2!1sen!2sin!4v1751757727924!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Techcora Location"
+                ></iframe>
               </div>
             </div>
           </div>
