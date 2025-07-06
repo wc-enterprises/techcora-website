@@ -1,37 +1,33 @@
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Instagram } from 'lucide-react';
 
-export default function Footer() {
+export default function Footer({ scrollToSection }: { scrollToSection: (sectionId: string) => void }) {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Our Team', href: '#team' },
-      { name: 'Careers', href: '#' },
-      { name: 'News', href: '#' }
+      { name: 'About Us', href: 'about' },
+      { name: 'Our Team', href: 'team' },
+      { name: 'Mission & Vision', href: 'mission' },
+      { name: 'Why Choose Us', href: 'why-choose-us' }
     ],
     services: [
-      { name: 'Software Development', href: '#services' },
-      { name: 'Mobile Apps', href: '#services' },
-      { name: 'UI/UX Design', href: '#services' },
-      { name: 'AI & ML', href: '#services' }
+      { name: 'Custom Software Development', href: 'services' },
+      { name: 'Mobile App Development', href: 'services' },
+      { name: 'Website Development', href: 'services' },
+      { name: 'UI/UX Design', href: 'services' },
+      { name: 'Cloud & DevOps', href: 'services' },
+      { name: 'AI & ML Solutions', href: 'services' }
     ],
     industries: [
-      { name: 'Retail', href: '#industries' },
-      { name: 'E-commerce', href: '#industries' },
-      { name: 'Fintech', href: '#industries' },
-      { name: 'IoT', href: '#industries' }
-    ],
-    support: [
-      { name: 'Documentation', href: '#' },
-      { name: 'Help Center', href: '#' },
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms of Service', href: '#' }
+      { name: 'Retail & E-commerce', href: 'industries' },
+      { name: 'Fintech', href: 'industries' },
+      { name: 'Logistics & Fleet', href: 'industries' },
+      { name: 'IoT & Robotics', href: 'industries' }
     ]
   };
 
   const socialLinks = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/techcora', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
     { icon: Github, href: '#', label: 'GitHub' },
     { icon: Instagram, href: '#', label: 'Instagram' }
@@ -41,7 +37,7 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="mb-6">
@@ -53,23 +49,24 @@ export default function Footer() {
               </p>
             </div>
             <p className="text-gray-400 leading-relaxed mb-6">
-              We're passionate about leveraging technology to solve complex business challenges 
-              and drive innovation across industries.
+              We craft cutting-edge software and robotics solutions that transform businesses 
+              and drive innovation across industries. From custom software development to 
+              AI-powered automation, we're your trusted technology partner.
             </p>
             
             {/* Contact Info */}
             <div className="space-y-2">
               <div className="flex items-center text-sm text-gray-400">
                 <Mail className="h-4 w-4 mr-2" />
-                hello@Techcora.com
+                info@techcoracorp.com
               </div>
               <div className="flex items-center text-sm text-gray-400">
                 <Phone className="h-4 w-4 mr-2" />
-                +1 (555) 123-4567
+                +91 6382331539
               </div>
               <div className="flex items-center text-sm text-gray-400">
                 <MapPin className="h-4 w-4 mr-2" />
-                123 Tech Street, Innovation City
+                Chennai, Tamil Nadu, India
               </div>
             </div>
           </div>
@@ -80,9 +77,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-gray-400 hover:text-orange-500 transition-colors duration-300">
+                  <button 
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-gray-400 hover:text-orange-500 transition-colors duration-300 text-left"
+                  >
                     {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -93,9 +93,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-gray-400 hover:text-orange-500 transition-colors duration-300">
+                  <button 
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-gray-400 hover:text-orange-500 transition-colors duration-300 text-left"
+                  >
                     {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -106,22 +109,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.industries.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-gray-400 hover:text-orange-500 transition-colors duration-300">
+                  <button 
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-gray-400 hover:text-orange-500 transition-colors duration-300 text-left"
+                  >
                     {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Support</h4>
-            <ul className="space-y-2">
-              {footerLinks.support.map((link) => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-gray-400 hover:text-orange-500 transition-colors duration-300">
-                    {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>

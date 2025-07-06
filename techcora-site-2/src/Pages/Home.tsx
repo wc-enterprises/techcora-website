@@ -58,7 +58,7 @@ export default function Home() {
       <Team />
       <Industries />
       <Contact />
-      <Footer />
+      <Footer scrollToSection={scrollToSection} />
     </div>
   );
 }
