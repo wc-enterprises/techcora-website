@@ -4,9 +4,9 @@ import {
   Palette, 
   Brain, 
   Cloud, 
-  Shield, 
-  BarChart, 
-  Headphones 
+  MessageCircle, 
+  Globe,
+  Cpu
 } from 'lucide-react';
 
 export default function Services() {
@@ -14,42 +14,42 @@ export default function Services() {
     {
       icon: Code,
       title: "Custom Software Development",
-      description: "Tailored software solutions built to meet your specific business requirements and goals."
+      description: "Tailor-made applications built to meet your business goals with precision and scalability."
     },
     {
       icon: Smartphone,
       title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications for iOS and Android platforms."
+      description: "High-performance iOS and Android apps with intuitive UI/UX, built for scale."
+    },
+    {
+      icon: Globe,
+      title: "Website Development",
+      description: "Responsive, fast, and secure web platforms for B2B, B2C, and enterprise use."
     },
     {
       icon: Palette,
       title: "UI/UX Design",
-      description: "User-centered design that creates intuitive and engaging digital experiences."
-    },
-    {
-      icon: Brain,
-      title: "AI & Machine Learning",
-      description: "Intelligent systems that learn, adapt, and provide valuable insights from your data."
+      description: "Crafting elegant, user-centric interfaces that drive engagement and retention."
     },
     {
       icon: Cloud,
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure and migration services for modern businesses."
+      title: "Cloud & DevOps Services",
+      description: "Infrastructure, automation, and deployment solutions to streamline your software lifecycle."
     },
     {
-      icon: Shield,
-      title: "Cybersecurity",
-      description: "Comprehensive security solutions to protect your digital assets and data."
+      icon: MessageCircle,
+      title: "IT Consulting & Tech Advisory",
+      description: "Expert guidance to help you plan, build, and scale with confidence."
     },
     {
-      icon: BarChart,
-      title: "Data Analytics",
-      description: "Transform raw data into actionable insights that drive business decisions."
+      icon: Brain,
+      title: "AI & Machine Learning Solutions",
+      description: "Leverage intelligent systems to automate, predict, and innovate faster."
     },
     {
-      icon: Headphones,
-      title: "24/7 Support",
-      description: "Round-the-clock technical support and maintenance for your systems."
+      icon: Cpu,
+      title: "Embedded Software & IoT",
+      description: "Custom firmware and device-level software solutions for connected products."
     }
   ];
 
