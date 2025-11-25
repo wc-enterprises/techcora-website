@@ -1,0 +1,7 @@
+{
+  "name": "Techcora",
+  "description": "Techcora - Leading India To Supremacy. A deep tech company website featuring a real-time voice-interactive Gemini Orb.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
