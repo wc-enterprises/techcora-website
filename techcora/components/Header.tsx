@@ -8,15 +8,15 @@ type Props = {
 const Header: React.FC<Props> = ({ onOpenContact }) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
         {/* Techcora Logo */}
-        <a href="#" className="flex items-center gap-3 cursor-pointer">
+        <a href="#" className="flex items-center gap-4 cursor-pointer">
           <img
             src="/assets/tc-logo1.png"
             alt="Techcora Logo"
-            className="h-10 w-auto"
+            className="h-16 w-auto"
           />
-          <span className="text-lg font-display font-bold tracking-[0.25em] text-white uppercase">
+          <span className="text-2xl font-display font-bold tracking-[0.25em] text-white uppercase">
             TECHCORA
           </span>
         </a>

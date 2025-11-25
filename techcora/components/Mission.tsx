@@ -32,15 +32,15 @@ const Mission: React.FC = () => {
         </div>
 
         {/* Mission Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
           {missionCards.map((card, index) => (
             <div
               key={index}
-              className="bg-black p-8 md:p-10 flex flex-col"
+              className="bg-black p-8 md:p-10 flex flex-col hover:bg-techcora-dark transition-colors group"
             >
               {/* Diamond Icon */}
-              <div className="w-12 h-12 bg-white/5 flex items-center justify-center mb-8">
-                <div className="w-3 h-3 bg-techcora-orange rotate-45"></div>
+              <div className="w-12 h-12 bg-white/5 flex items-center justify-center mb-8 group-hover:bg-techcora-orange transition-colors duration-300">
+                <div className="w-3 h-3 bg-techcora-orange rotate-45 group-hover:bg-black transition-colors duration-300"></div>
               </div>
 
               {/* Title */}

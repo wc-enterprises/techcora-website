@@ -113,7 +113,7 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-black border border-white/10 overflow-hidden group hover:border-white/20 transition-colors"
+              className="bg-black overflow-hidden group hover:bg-techcora-dark transition-colors border border-white/10 hover:border-techcora-orange/50"
             >
               {/* Image Container */}
               <div className="relative h-48 overflow-hidden">
@@ -126,9 +126,9 @@ const Projects: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
                 {/* Category Badge */}
-                <div className="absolute top-4 left-4 flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5">
-                  <div className="w-2 h-2 bg-techcora-orange rotate-45"></div>
-                  <span className="text-[10px] font-display uppercase tracking-widest text-white">
+                <div className="absolute top-4 left-4 flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 group-hover:bg-techcora-orange transition-colors duration-300">
+                  <div className="w-2 h-2 bg-techcora-orange rotate-45 group-hover:bg-black transition-colors duration-300"></div>
+                  <span className="text-[10px] font-display uppercase tracking-widest text-white group-hover:text-black transition-colors duration-300">
                     {project.category}
                   </span>
                 </div>
