@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import React, { useCallback, useState } from "react";
 import ContactModal from "./components/ContactModal";
 import Features from "./components/Features";
@@ -7,11 +7,8 @@ import Mission from "./components/Mission";
 import TechcoraOrb from "./components/Orb";
 import Projects from "./components/Projects";
 import Vision from "./components/Vision";
-import { useGeminiLive } from "./hooks/useGeminiLive";
 
 const App: React.FC = () => {
-  const { connect, disconnect, connectionState, audioMetrics } =
-    useGeminiLive();
   const [contactTitle, setContactTitle] = useState<string | undefined>(
     undefined
   );
@@ -28,24 +25,17 @@ const App: React.FC = () => {
 
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+        <section className="relative min-h-screen flex items-center pt-24 md:pt-16 overflow-hidden">
           {/* Dynamic Background */}
           <div className="absolute inset-0 bg-black">
             {/* Large Gradient Glow - top right */}
-            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-techcora-orange/10 blur-[180px] rounded-full"></div>
+            <div className="absolute top-0 right-0 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-techcora-orange/10 blur-[180px] rounded-full"></div>
           </div>
 
-          <div className="max-w-7xl mx-auto px-6 w-full relative z-10 grid lg:grid-cols-2 gap-8 items-center">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-0 w-full relative z-10 flex flex-col-reverse lg:grid lg:grid-cols-2 gap-8 lg:gap-8 items-center">
             {/* Left: Text Content */}
-            <div className="order-2 lg:order-1">
-              <div className="inline-flex items-center gap-3 mb-10 border border-white/20 bg-white/5 px-4 py-2 rounded-sm">
-                <span className="w-2 h-2 bg-techcora-orange rounded-full animate-pulse"></span>
-                <span className="text-[11px] font-display uppercase tracking-[0.2em] text-white/90">
-                  Techcora AI Integrated System
-                </span>
-              </div>
-
-              <h1 className="text-5xl md:text-6xl lg:text-[80px] font-display font-black leading-[0.95] mb-8 uppercase">
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl md:text-6xl lg:text-[80px] font-display font-black leading-[0.95] mb-6 md:mb-8 uppercase">
                 <span className="text-white">Lead India</span>
                 <br />
                 <span className="text-techcora-orange">To</span>
@@ -53,7 +43,7 @@ const App: React.FC = () => {
                 <span className="text-techcora-orange">Supremacy</span>
               </h1>
 
-              <p className="text-base text-slate-400 font-normal mb-10 max-w-md leading-relaxed">
+              <p className="text-sm md:text-base text-slate-400 font-normal mb-8 md:mb-10 max-w-md mx-auto lg:mx-0 leading-relaxed">
                 Building a group of world-changing companies in{" "}
                 <strong className="text-white font-semibold">
                   Softwares, Robotics, Rockets, and Energy
@@ -61,39 +51,31 @@ const App: React.FC = () => {
                 . Restoring historic greatness through deep tech.
               </p>
 
-              <div className="flex flex-col gap-3 max-w-xs">
-                <button
-                  onClick={connect}
-                  className="w-full px-6 py-4 bg-techcora-orange text-white font-display font-bold uppercase tracking-[0.1em] text-sm hover:bg-orange-600 transition-all duration-300 flex items-center justify-center gap-3 rounded"
+              <div className="flex flex-col gap-3 max-w-xs mx-auto lg:mx-0">
+                <a
+                  href="#projects"
+                  className="w-full px-6 py-3 md:py-4 border border-white/40 text-white font-display font-bold uppercase tracking-[0.1em] text-sm hover:bg-white/10 transition-all duration-300 rounded text-center"
                 >
-                  Initialize Voice Mode <ArrowRight className="w-4 h-4" />
-                </button>
-                <button className="w-full px-6 py-4 border border-white/40 text-white font-display font-bold uppercase tracking-[0.1em] text-sm hover:bg-white/10 transition-all duration-300 rounded">
-                  Our Manifesto
-                </button>
+                  Our Projects
+                </a>
               </div>
             </div>
 
-            <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative">
-                <TechcoraOrb
-                    connectionState={connectionState}
-                    audioMetrics={audioMetrics}
-                    onConnect={connect}
-                    onDisconnect={disconnect}
-                />
+            <div className="flex justify-center relative w-full">
+                <TechcoraOrb />
             </div>
           </div>
         </section>
 
         {/* Industry Strip */}
         <div className="border-y border-white/10 bg-techcora-dark">
-          <div className="max-w-7xl mx-auto px-6 py-8">
-            <div className="flex flex-wrap justify-between items-center gap-8 md:gap-0">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
+            <div className="grid grid-cols-2 md:flex md:flex-wrap justify-between items-center gap-4 md:gap-0">
               {["Softwares", "Robotics", "Rockets", "Energy"].map(
                 (industry) => (
                   <div
                     key={industry}
-                    className="flex items-center gap-2 text-slate-400 uppercase font-display tracking-widest text-sm hover:text-techcora-orange transition-colors cursor-default"
+                    className="flex items-center gap-2 text-slate-400 uppercase font-display tracking-widest text-xs md:text-sm hover:text-techcora-orange transition-colors cursor-default"
                   >
                     <span className="w-1.5 h-1.5 bg-techcora-orange rotate-45"></span>
                     {industry}
@@ -115,35 +97,35 @@ const App: React.FC = () => {
         {/* Contact/Footer Section */}
         <section
           id="contact"
-          className="relative py-32 px-6 bg-black border-t border-white/10"
+          className="relative py-16 md:py-32 px-4 md:px-6 bg-black border-t border-white/10"
         >
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 uppercase">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 md:mb-8 uppercase">
               Join the <span className="text-techcora-orange">Revolution</span>
             </h2>
-            <p className="text-slate-400 mb-12 max-w-xl mx-auto text-lg">
+            <p className="text-slate-400 mb-8 md:mb-12 max-w-xl mx-auto text-sm md:text-lg">
               We are looking for the best engineers and individuals to create
               world-class products at lightning speeds.
             </p>
-            <div className="flex flex-col md:flex-row justify-center gap-6">
+            <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6">
               <div
-                className="group border border-white/10 p-8 hover:border-techcora-orange transition-colors cursor-pointer bg-techcora-dark"
+                className="group border border-white/10 p-6 md:p-8 hover:border-techcora-orange transition-colors cursor-pointer bg-techcora-dark"
                 onClick={() => openContact("Apply Now")}
               >
-                <h3 className="font-display font-bold text-xl mb-2">Careers</h3>
-                <div className="flex items-center text-techcora-orange uppercase text-xs tracking-widest font-bold gap-2">
+                <h3 className="font-display font-bold text-lg md:text-xl mb-2">Careers</h3>
+                <div className="flex items-center justify-center md:justify-start text-techcora-orange uppercase text-xs tracking-widest font-bold gap-2">
                   Apply Now{" "}
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
               <div
-                className="group border border-white/10 p-8 hover:border-techcora-orange transition-colors cursor-pointer bg-techcora-dark"
+                className="group border border-white/10 p-6 md:p-8 hover:border-techcora-orange transition-colors cursor-pointer bg-techcora-dark"
                 onClick={() => openContact("Contact Us")}
               >
-                <h3 className="font-display font-bold text-xl mb-2">
+                <h3 className="font-display font-bold text-lg md:text-xl mb-2">
                   Investors
                 </h3>
-                <div className="flex items-center text-techcora-orange uppercase text-xs tracking-widest font-bold gap-2">
+                <div className="flex items-center justify-center md:justify-start text-techcora-orange uppercase text-xs tracking-widest font-bold gap-2">
                   Contact Us{" "}
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -151,9 +133,9 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <footer className="max-w-7xl mx-auto mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-slate-600 uppercase tracking-widest">
+          <footer className="max-w-7xl mx-auto mt-16 md:mt-24 pt-6 md:pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-slate-600 uppercase tracking-widest">
             <p>© 2025 Techcora. All rights reserved.</p>
-            <div className="flex gap-8 mt-4 md:mt-0">
+            <div className="flex gap-6 md:gap-8 mt-4 md:mt-0">
               <a href="#" className="hover:text-techcora-orange">
                 Privacy
               </a>

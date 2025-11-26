@@ -85,31 +85,29 @@ const projects = [
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="py-24 bg-techcora-dark relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="projects" className="py-16 md:py-24 bg-techcora-dark relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Header */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-12 mb-12 md:mb-16">
           {/* Left - Title */}
           <div>
-            <span className="text-techcora-orange font-display font-bold tracking-[0.3em] uppercase text-xs mb-6 block">
+            <span className="text-techcora-orange font-display font-bold tracking-[0.3em] uppercase text-xs mb-4 md:mb-6 block">
               Our Projects
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase leading-[1.1]">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-black uppercase leading-[1.1]">
               <span className="text-white">Building</span><br />
               <span className="text-techcora-orange">Solutions</span>
             </h2>
           </div>
 
           {/* Right - Description */}
-          <div className="flex items-end">
-            <p className="text-slate-400 text-base leading-relaxed lg:pl-8 border-l-2 border-techcora-orange">
-              Empowering businesses with cutting-edge software solutions across industries, from retail to education.
-            </p>
-          </div>
+          <p className="text-slate-400 text-sm md:text-base leading-relaxed max-w-md md:pl-8 border-l-2 border-techcora-orange pl-4">
+            Empowering businesses with cutting-edge software solutions across industries, from retail to education.
+          </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {projects.map((project, index) => (
             <div
               key={index}

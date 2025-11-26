@@ -1,100 +1,238 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ConnectionState, AudioMetrics } from '../types';
 
-interface OrbProps {
-  connectionState: ConnectionState;
-  audioMetrics: AudioMetrics;
-  onConnect: () => void;
-  onDisconnect: () => void;
-}
-
-const TechcoraOrb: React.FC<OrbProps> = ({ connectionState, audioMetrics, onConnect, onDisconnect }) => {
-  const isConnected = connectionState === ConnectionState.CONNECTED;
-  const isConnecting = connectionState === ConnectionState.CONNECTING;
-
+const TechcoraOrb: React.FC = () => {
   return (
-    <div className="relative flex flex-col items-center justify-center h-[450px] w-full">
+    <div className="relative flex items-center justify-center h-[300px] md:h-[400px] lg:h-[500px] w-full scale-[0.65] md:scale-[0.85] lg:scale-100">
 
-      {/* Outermost Ring - Large */}
-      <div className="absolute w-[500px] h-[500px] rounded-full border border-techcora-orange/30 pointer-events-none"></div>
+      {/* Outermost Tech Ring - Rotating */}
+      <motion.div
+        className="absolute w-[420px] h-[420px] rounded-full border border-techcora-orange/20"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+      >
+        {/* Orbiting Satellite Dots */}
+        <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-techcora-orange rounded-full shadow-lg shadow-techcora-orange/50" />
+        <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-2 h-2 bg-techcora-orange/60 rounded-full" />
+      </motion.div>
 
-      {/* Outer Ring */}
-      <div className="absolute w-[400px] h-[400px] rounded-full border border-techcora-orange/40 pointer-events-none"></div>
+      {/* Second Ring - Counter Rotating */}
+      <motion.div
+        className="absolute w-[350px] h-[350px] rounded-full border border-dashed border-techcora-orange/30"
+        animate={{ rotate: -360 }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+      >
+        {/* Orbiting Elements */}
+        <div className="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-white rounded-full" />
+        <div className="absolute top-1/2 -left-1 -translate-y-1/2 w-2 h-2 bg-techcora-orange/80 rounded-full" />
+      </motion.div>
 
-      {/* Middle Ring */}
-      <div className="absolute w-[320px] h-[320px] rounded-full border border-techcora-orange/20 pointer-events-none"></div>
+      {/* Third Ring with Tech Markers */}
+      <motion.div
+        className="absolute w-[290px] h-[290px] rounded-full border border-techcora-orange/40"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      >
+        {/* 4 Corner Tech Nodes */}
+        {[0, 90, 180, 270].map((deg) => (
+          <motion.div
+            key={deg}
+            className="absolute w-1.5 h-1.5 bg-techcora-orange rounded-full"
+            style={{
+              top: '50%',
+              left: '50%',
+              transform: `rotate(${deg}deg) translateX(145px) translateY(-50%)`,
+            }}
+            animate={{ opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 1.5, repeat: Infinity, delay: deg / 360 }}
+          />
+        ))}
+      </motion.div>
+
+      {/* Inner Pulse Ring */}
+      <motion.div
+        className="absolute w-[240px] h-[240px] rounded-full border-2 border-techcora-orange/50"
+        animate={{
+          scale: [1, 1.05, 1],
+          opacity: [0.5, 0.8, 0.5],
+        }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Circuit Lines - Radiating from center */}
+      <svg className="absolute w-[400px] h-[400px] pointer-events-none" viewBox="0 0 400 400">
+        {/* Top Circuit Line */}
+        <motion.path
+          d="M200 160 L200 80 L240 40"
+          stroke="rgba(255, 107, 0, 0.3)"
+          strokeWidth="1"
+          fill="none"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: [0, 1, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        />
+        {/* Right Circuit Line */}
+        <motion.path
+          d="M240 200 L320 200 L360 160"
+          stroke="rgba(255, 107, 0, 0.3)"
+          strokeWidth="1"
+          fill="none"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: [0, 1, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        />
+        {/* Bottom Circuit Line */}
+        <motion.path
+          d="M200 240 L200 320 L160 360"
+          stroke="rgba(255, 107, 0, 0.3)"
+          strokeWidth="1"
+          fill="none"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: [0, 1, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        />
+        {/* Left Circuit Line */}
+        <motion.path
+          d="M160 200 L80 200 L40 240"
+          stroke="rgba(255, 107, 0, 0.3)"
+          strokeWidth="1"
+          fill="none"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: [0, 1, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+        />
+
+        {/* Circuit Nodes */}
+        <motion.circle cx="240" cy="40" r="3" fill="#ff6b00"
+          animate={{ opacity: [0.3, 1, 0.3] }}
+          transition={{ duration: 3, repeat: Infinity }}
+        />
+        <motion.circle cx="360" cy="160" r="3" fill="#ff6b00"
+          animate={{ opacity: [0.3, 1, 0.3] }}
+          transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+        />
+        <motion.circle cx="160" cy="360" r="3" fill="#ff6b00"
+          animate={{ opacity: [0.3, 1, 0.3] }}
+          transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+        />
+        <motion.circle cx="40" cy="240" r="3" fill="#ff6b00"
+          animate={{ opacity: [0.3, 1, 0.3] }}
+          transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
+        />
+      </svg>
+
+      {/* Floating Data Particles */}
+      {[...Array(8)].map((_, i) => (
+        <motion.div
+          key={`particle-${i}`}
+          className="absolute w-1 h-1 bg-techcora-orange/60 rounded-full"
+          style={{
+            top: '50%',
+            left: '50%',
+          }}
+          animate={{
+            x: [0, Math.cos(i * 45 * Math.PI / 180) * 180],
+            y: [0, Math.sin(i * 45 * Math.PI / 180) * 180],
+            opacity: [0, 1, 0],
+            scale: [0, 1.5, 0],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            delay: i * 0.4,
+            ease: "easeOut",
+          }}
+        />
+      ))}
+
+      {/* HUD-Style Corner Brackets */}
+      <div className="absolute w-[200px] h-[200px]">
+        {/* Top-Left */}
+        <motion.div
+          className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-techcora-orange/40"
+          animate={{ opacity: [0.4, 0.8, 0.4] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
+        {/* Top-Right */}
+        <motion.div
+          className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-techcora-orange/40"
+          animate={{ opacity: [0.4, 0.8, 0.4] }}
+          transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+        />
+        {/* Bottom-Left */}
+        <motion.div
+          className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-techcora-orange/40"
+          animate={{ opacity: [0.4, 0.8, 0.4] }}
+          transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+        />
+        {/* Bottom-Right */}
+        <motion.div
+          className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-techcora-orange/40"
+          animate={{ opacity: [0.4, 0.8, 0.4] }}
+          transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
+        />
+      </div>
+
+      {/* Scanning Line Effect */}
+      <motion.div
+        className="absolute w-[180px] h-[2px] bg-gradient-to-r from-transparent via-techcora-orange/60 to-transparent"
+        animate={{
+          y: [-90, 90],
+          opacity: [0, 1, 1, 0],
+        }}
+        transition={{
+          duration: 2.5,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      />
 
       {/* Ambient Glow */}
       <motion.div
-        className="absolute w-[280px] h-[280px] bg-techcora-orange/8 blur-[80px] rounded-full pointer-events-none"
+        className="absolute w-[200px] h-[200px] bg-techcora-orange/15 blur-[60px] rounded-full pointer-events-none"
         animate={{
-            opacity: isConnected ? [0.2, 0.35, 0.2] : [0.1, 0.15, 0.1],
-            scale: isConnected ? [1, 1.05, 1] : 1
+          opacity: [0.15, 0.3, 0.15],
+          scale: [1, 1.1, 1],
         }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Connecting Spinner */}
-      {isConnecting && (
-         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-56 h-56 border border-techcora-orange/30 border-t-techcora-orange rounded-full animate-spin"></div>
-         </div>
-      )}
-
-      {/* Inner Ring - closest to orb */}
-      <div className="absolute w-[260px] h-[260px] rounded-full border border-techcora-orange/50 pointer-events-none"></div>
-
-      {/* Main Logo / Orb Container */}
+      {/* Main Logo Container - Centered */}
       <motion.div
-        className="relative z-10 cursor-pointer w-56 h-56 flex items-center justify-center"
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
-        onClick={isConnected ? onDisconnect : onConnect}
+        className="relative z-10 w-48 h-48 flex items-center justify-center rounded-full overflow-hidden"
+        animate={{
+          scale: [1, 1.03, 1],
+        }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        style={{
+          maskImage: 'radial-gradient(circle, black 55%, transparent 75%)',
+          WebkitMaskImage: 'radial-gradient(circle, black 55%, transparent 75%)',
+        }}
       >
         {/* Logo Image */}
-        <motion.img
+        <img
           src="/assets/tc-logo.png"
-          alt="Techcora Orb"
-          className="w-full h-full object-contain mix-blend-lighten opacity-75"
-          animate={{
-            scale: isConnected ? [1, 1.02, 1] : 1,
-            opacity: isConnected ? 0.85 : 0.75
-          }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          alt="Techcora Logo"
+          className="w-full h-full object-contain scale-[1.3]"
         />
-
-        {/* Central CTA Text */}
-        {!isConnected && !isConnecting && (
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="absolute inset-0 flex items-center justify-center pointer-events-none"
-            >
-                <div className="flex items-center gap-1 bg-black/40 px-3 py-1.5 backdrop-blur-sm rounded">
-                    <span className="w-1.5 h-1.5 bg-white rounded-full"></span>
-                    <span className="text-white text-[10px] font-display tracking-[0.3em] uppercase">
-                        Initialize
-                    </span>
-                    <span className="w-1.5 h-1.5 bg-white rounded-full"></span>
-                </div>
-            </motion.div>
-        )}
       </motion.div>
 
-      {/* Status Text */}
-      <div className="absolute bottom-8 text-center">
+      {/* Status Indicator - Bottom */}
+      <div className="absolute bottom-4 flex items-center gap-2">
         <motion.div
-            animate={{ opacity: isConnected ? 1 : 0.6 }}
-            className="flex items-center justify-center gap-2"
-        >
-            <div className={`w-1.5 h-1.5 rounded-full ${isConnected ? 'bg-green-500' : 'bg-slate-600'}`}></div>
-            <span className="text-[11px] text-slate-500 font-display tracking-[0.2em] uppercase">
-                {isConnected ? 'System Online' : 'System Standby'}
-            </span>
-        </motion.div>
+          className="w-2 h-2 bg-techcora-orange rounded-full"
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+        />
+        <span className="text-[10px] text-techcora-orange/70 font-display tracking-[0.3em] uppercase">
+          Building the Future
+        </span>
+        <motion.div
+          className="w-2 h-2 bg-techcora-orange rounded-full"
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 1.5, repeat: Infinity, delay: 0.75 }}
+        />
       </div>
-
     </div>
   );
 };
