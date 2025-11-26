@@ -30,7 +30,7 @@ const values = [
   {
     icon: <Rocket className="w-6 h-6 text-white" />,
     title: "Supremacy",
-    description: "Our vision is clear: To Lead India To Supremacy (LiTS) through technological dominance."
+    description: "Our vision is clear: LITS — Lead India To Supremacy through technological dominance."
   }
 ];
 

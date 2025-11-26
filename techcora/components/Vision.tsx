@@ -20,14 +20,13 @@ const Vision: React.FC = () => {
               Our Vision
             </span>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-black uppercase leading-[1.1]">
-              <span className="text-white">To Lead India </span>
-              <span className="text-techcora-orange">To Supremacy</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-techcora-orange">LITS</span>
             </h2>
           </div>
 
           {/* Right - Description */}
           <p className="text-slate-400 text-sm md:text-base leading-relaxed max-w-md md:pl-8 border-l-2 border-techcora-orange pl-4">
-            To Lead India To Supremacy (LiTS) by creating groundbreaking products at the cutting edge of technology. We aim to uplift India's greatness, restore its historic greatness by extending our innovations to solve global challenges.
+            <strong className="text-white">LITS</strong> — Lead India To Supremacy. Creating groundbreaking products at the cutting edge of technology. We aim to uplift India's greatness, restore its historic legacy by extending our innovations to solve global challenges.
           </p>
         </div>
 

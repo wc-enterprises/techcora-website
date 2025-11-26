@@ -35,12 +35,8 @@ const App: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-6 py-6 md:py-4 lg:py-0 w-full relative z-10 flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-6 lg:gap-8 items-center">
             {/* Left: Text Content */}
             <div className="text-center md:text-left">
-              <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-6xl xl:text-[80px] font-display font-black leading-[0.95] mb-4 md:mb-6 lg:mb-8 uppercase">
-                <span className="text-white">Lead India</span>
-                <br />
-                <span className="text-techcora-orange">To</span>
-                <br />
-                <span className="text-techcora-orange">Supremacy</span>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-black leading-[0.95] mb-4 md:mb-6 lg:mb-8 uppercase tracking-wider">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-techcora-orange">LITS</span>
               </h1>
 
               <p className="text-xs sm:text-sm md:text-sm lg:text-base text-slate-400 font-normal mb-6 md:mb-8 lg:mb-10 max-w-sm md:max-w-xs lg:max-w-md mx-auto md:mx-0 leading-relaxed">

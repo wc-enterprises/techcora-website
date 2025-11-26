@@ -38,13 +38,14 @@ const projects = [
     ]
   },
   {
-    title: "Techcora School Software",
+    title: "Techcora Education Software",
     description: "Complete school management platform with student records, grades, and parent communication.",
     image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop",
     category: "Software",
     status: "Launched",
     tags: ["EdTech", "Management", "Cloud"],
     links: [
+      { label: "Website", type: "external", url: "https://education.techcora.in/" },
       { label: "Demo Video", type: "video", url: "https://www.youtube.com/watch?v=oo928Q58oss&list=PLvQ3ckclYs5Zd1MMXc00k4xpcnt1FAXt_" }
     ]
   },

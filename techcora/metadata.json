@@ -1,6 +1,6 @@
 {
   "name": "Techcora",
-  "description": "Techcora - Leading India To Supremacy. A deep tech company website featuring a real-time voice-interactive Gemini Orb.",
+  "description": "Techcora - LITS (Lead India To Supremacy). A deep tech company building world-changing products in Softwares, Robotics, Rockets, and Energy.",
   "requestFramePermissions": [
     "microphone"
   ]
