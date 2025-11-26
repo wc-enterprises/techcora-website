@@ -52,6 +52,21 @@ const LITSReveal: React.FC = () => {
           ))}
         </span>
       </h1>
+
+      <motion.p
+        className="mt-2 text-[10px] md:text-xs text-slate-500 uppercase tracking-widest flex items-center gap-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: hoveredIndex === null ? 0.6 : 0 }}
+        transition={{ duration: 0.3, delay: 0.6 }}
+      >
+        <motion.span
+          animate={{ x: [0, 4, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          →
+        </motion.span>
+        Hover or tap letters
+      </motion.p>
     </div>
   );
 };
