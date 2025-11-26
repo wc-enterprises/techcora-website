@@ -1,4 +1,4 @@
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ArrowRight } from "lucide-react";
 import React, { useCallback, useState } from "react";
 import ContactModal from "./components/ContactModal";
 import Features from "./components/Features";
@@ -47,12 +47,13 @@ const App: React.FC = () => {
                 . Restoring historic greatness through deep tech.
               </p>
 
-              <div className="flex flex-col gap-3 max-w-[200px] md:max-w-[220px] lg:max-w-xs mx-auto md:mx-0">
+              <div className="flex flex-col gap-3 max-w-[220px] md:max-w-[240px] lg:max-w-xs mx-auto md:mx-0">
                 <a
                   href="#projects"
-                  className="w-full px-4 md:px-5 lg:px-6 py-2.5 md:py-3 lg:py-4 border border-white/40 text-white font-display font-bold uppercase tracking-[0.1em] text-xs md:text-sm hover:bg-white/10 transition-all duration-300 rounded text-center"
+                  className="group w-full px-4 md:px-5 lg:px-6 py-2.5 md:py-3 lg:py-4 border border-white/40 text-white font-display font-bold uppercase tracking-[0.1em] text-xs md:text-sm hover:bg-techcora-orange hover:border-techcora-orange hover:text-white transition-all duration-300 rounded flex items-center justify-center gap-2"
                 >
                   Our Projects
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
               </div>
             </div>
