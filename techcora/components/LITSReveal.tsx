@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const words = [
@@ -10,6 +10,15 @@ const words = [
 
 const LITSReveal: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isInteractive, setIsInteractive] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)');
+    const update = () => setIsInteractive(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
 
   return (
     <div className="mb-4 md:mb-6 lg:mb-8" onClick={() => setHoveredIndex(null)}>
@@ -19,11 +28,11 @@ const LITSReveal: React.FC = () => {
             <motion.span
               key={index}
               className="inline-flex cursor-pointer"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              onMouseEnter={() => isInteractive && setHoveredIndex(index)}
+              onMouseLeave={() => isInteractive && setHoveredIndex(null)}
               onClick={(e) => {
                 e.stopPropagation();
-                setHoveredIndex(hoveredIndex === index ? null : index);
+                if (isInteractive) setHoveredIndex(hoveredIndex === index ? null : index);
               }}
             >
               <span
@@ -35,7 +44,7 @@ const LITSReveal: React.FC = () => {
               </span>
 
               <motion.span
-                className="overflow-hidden hidden md:inline-block text-transparent bg-clip-text bg-gradient-to-r from-techcora-orange/80 to-techcora-orange/60"
+                className="overflow-hidden hidden lg:inline-block text-transparent bg-clip-text bg-gradient-to-r from-techcora-orange/80 to-techcora-orange/60"
                 initial={{ width: 0, opacity: 0 }}
                 animate={{
                   width: hoveredIndex === index ? 'auto' : 0,
@@ -53,8 +62,12 @@ const LITSReveal: React.FC = () => {
         </span>
       </h1>
 
+      <p className="mt-2 text-sm sm:text-base md:text-lg font-display uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white to-techcora-orange lg:hidden">
+        Lead India To Supremacy
+      </p>
+
       <motion.p
-        className="mt-2 text-[10px] md:text-xs text-slate-500 uppercase tracking-widest flex items-center gap-2"
+        className="mt-2 hidden lg:flex text-[10px] md:text-xs text-slate-500 uppercase tracking-widest items-center gap-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: hoveredIndex === null ? 0.6 : 0 }}
         transition={{ duration: 0.3, delay: 0.6 }}
@@ -65,7 +78,7 @@ const LITSReveal: React.FC = () => {
         >
           →
         </motion.span>
-        Hover or tap letters
+        Hover letters
       </motion.p>
     </div>
   );
