@@ -25,17 +25,17 @@ const App: React.FC = () => {
 
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center pt-24 md:pt-16 overflow-hidden">
+        <section className="relative min-h-screen flex items-center pt-20 md:pt-24 lg:pt-16 overflow-hidden">
           {/* Dynamic Background */}
           <div className="absolute inset-0 bg-black">
             {/* Large Gradient Glow - top right */}
-            <div className="absolute top-0 right-0 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-techcora-orange/10 blur-[180px] rounded-full"></div>
+            <div className="absolute top-0 right-0 w-[300px] md:w-[500px] lg:w-[700px] h-[300px] md:h-[500px] lg:h-[700px] bg-techcora-orange/10 blur-[180px] rounded-full"></div>
           </div>
 
-          <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-0 w-full relative z-10 flex flex-col-reverse lg:grid lg:grid-cols-2 gap-8 lg:gap-8 items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-6 py-6 md:py-4 lg:py-0 w-full relative z-10 flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-6 lg:gap-8 items-center">
             {/* Left: Text Content */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-6xl lg:text-[80px] font-display font-black leading-[0.95] mb-6 md:mb-8 uppercase">
+            <div className="text-center md:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-6xl xl:text-[80px] font-display font-black leading-[0.95] mb-4 md:mb-6 lg:mb-8 uppercase">
                 <span className="text-white">Lead India</span>
                 <br />
                 <span className="text-techcora-orange">To</span>
@@ -43,7 +43,7 @@ const App: React.FC = () => {
                 <span className="text-techcora-orange">Supremacy</span>
               </h1>
 
-              <p className="text-sm md:text-base text-slate-400 font-normal mb-8 md:mb-10 max-w-md mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-sm lg:text-base text-slate-400 font-normal mb-6 md:mb-8 lg:mb-10 max-w-sm md:max-w-xs lg:max-w-md mx-auto md:mx-0 leading-relaxed">
                 Building a group of world-changing companies in{" "}
                 <strong className="text-white font-semibold">
                   Softwares, Robotics, Rockets, and Energy
@@ -51,10 +51,10 @@ const App: React.FC = () => {
                 . Restoring historic greatness through deep tech.
               </p>
 
-              <div className="flex flex-col gap-3 max-w-xs mx-auto lg:mx-0">
+              <div className="flex flex-col gap-3 max-w-[200px] md:max-w-[220px] lg:max-w-xs mx-auto md:mx-0">
                 <a
                   href="#projects"
-                  className="w-full px-6 py-3 md:py-4 border border-white/40 text-white font-display font-bold uppercase tracking-[0.1em] text-sm hover:bg-white/10 transition-all duration-300 rounded text-center"
+                  className="w-full px-4 md:px-5 lg:px-6 py-2.5 md:py-3 lg:py-4 border border-white/40 text-white font-display font-bold uppercase tracking-[0.1em] text-xs md:text-sm hover:bg-white/10 transition-all duration-300 rounded text-center"
                 >
                   Our Projects
                 </a>

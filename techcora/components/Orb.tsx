@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const TechcoraOrb: React.FC = () => {
   return (
-    <div className="relative flex items-center justify-center h-[300px] md:h-[400px] lg:h-[500px] w-full scale-[0.65] md:scale-[0.85] lg:scale-100">
+    <div className="relative flex items-center justify-center h-[250px] sm:h-[280px] md:h-[320px] lg:h-[420px] xl:h-[500px] w-full scale-[0.55] sm:scale-[0.6] md:scale-[0.65] lg:scale-[0.8] xl:scale-100">
 
       {/* Outermost Tech Ring - Rotating */}
       <motion.div
@@ -218,17 +218,17 @@ const TechcoraOrb: React.FC = () => {
       </motion.div>
 
       {/* Status Indicator - Bottom */}
-      <div className="absolute bottom-4 flex items-center gap-2">
+      <div className="absolute bottom-2 md:bottom-4 flex items-center gap-1.5 md:gap-2">
         <motion.div
-          className="w-2 h-2 bg-techcora-orange rounded-full"
+          className="w-1.5 h-1.5 md:w-2 md:h-2 bg-techcora-orange rounded-full"
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 1.5, repeat: Infinity }}
         />
-        <span className="text-[10px] text-techcora-orange/70 font-display tracking-[0.3em] uppercase">
+        <span className="text-[8px] md:text-[10px] text-techcora-orange/70 font-display tracking-[0.2em] md:tracking-[0.3em] uppercase">
           Building the Future
         </span>
         <motion.div
-          className="w-2 h-2 bg-techcora-orange rounded-full"
+          className="w-1.5 h-1.5 md:w-2 md:h-2 bg-techcora-orange rounded-full"
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 1.5, repeat: Infinity, delay: 0.75 }}
         />

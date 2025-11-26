@@ -1,10 +1,11 @@
 import React from 'react';
+import { Globe, Cpu, Lightbulb, Rocket } from 'lucide-react';
 
 const visionCards = [
-  { title: "Global Impact" },
-  { title: "Technology Leadership" },
-  { title: "Industry Innovation" },
-  { title: "Future Ready" }
+  { title: "Global Impact", icon: <Globe className="w-5 h-5 md:w-6 md:h-6" /> },
+  { title: "Technology Leadership", icon: <Cpu className="w-5 h-5 md:w-6 md:h-6" /> },
+  { title: "Industry Innovation", icon: <Lightbulb className="w-5 h-5 md:w-6 md:h-6" /> },
+  { title: "Future Ready", icon: <Rocket className="w-5 h-5 md:w-6 md:h-6" /> }
 ];
 
 const Vision: React.FC = () => {
@@ -37,9 +38,9 @@ const Vision: React.FC = () => {
               key={index}
               className="bg-black p-6 md:p-8 lg:p-10 flex flex-col hover:bg-techcora-dark transition-colors group"
             >
-              {/* Diamond Icon */}
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-techcora-orange transition-colors duration-300">
-                <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-techcora-orange rotate-45 group-hover:bg-black transition-colors duration-300"></div>
+              {/* Icon */}
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-techcora-orange transition-colors duration-300 text-techcora-orange group-hover:text-black">
+                {card.icon}
               </div>
 
               {/* Title */}

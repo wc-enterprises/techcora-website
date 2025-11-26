@@ -1,10 +1,11 @@
 import React from 'react';
+import { Sparkles, Users, ShieldCheck, TrendingUp } from 'lucide-react';
 
 const missionCards = [
-  { title: "Innovation First" },
-  { title: "Client Success" },
-  { title: "Quality Assurance" },
-  { title: "Sustainable Growth" }
+  { title: "Innovation First", icon: <Sparkles className="w-5 h-5 md:w-6 md:h-6" /> },
+  { title: "Client Success", icon: <Users className="w-5 h-5 md:w-6 md:h-6" /> },
+  { title: "Quality Assurance", icon: <ShieldCheck className="w-5 h-5 md:w-6 md:h-6" /> },
+  { title: "Sustainable Growth", icon: <TrendingUp className="w-5 h-5 md:w-6 md:h-6" /> }
 ];
 
 const Mission: React.FC = () => {
@@ -36,9 +37,9 @@ const Mission: React.FC = () => {
               key={index}
               className="bg-techcora-dark p-6 md:p-8 lg:p-10 flex flex-col hover:bg-black transition-colors group"
             >
-              {/* Diamond Icon */}
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-techcora-orange transition-colors duration-300">
-                <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-techcora-orange rotate-45 group-hover:bg-black transition-colors duration-300"></div>
+              {/* Icon */}
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-techcora-orange transition-colors duration-300 text-techcora-orange group-hover:text-black">
+                {card.icon}
               </div>
 
               {/* Title */}

@@ -73,8 +73,6 @@ const Header: React.FC<Props> = ({ onOpenContact }) => {
           </div>
         </div>
 
-        {/* Orange gradient line under header */}
-        <div className="h-[1px] bg-gradient-to-r from-techcora-orange/60 via-techcora-orange/40 to-transparent"></div>
       </header>
 
       {/* Mobile Menu Overlay */}
