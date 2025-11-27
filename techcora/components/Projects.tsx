@@ -3,15 +3,26 @@ import { ExternalLink, Play } from 'lucide-react';
 
 const projects = [
   {
-    title: "Techcora Salon Software",
-    description: "Comprehensive salon management system with client booking, inventory management, and staff scheduling.",
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=400&fit=crop",
+    title: "Techcora Fleet Software",
+    description: "Complete fleet management solution with vehicle tracking, driver management, and route optimization.",
+    image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=600&h=400&fit=crop",
     category: "Software",
     status: "Launched",
-    tags: ["SAAS", "Management", "Cloud"],
+    tags: ["Fleet", "Logistics", "Tracking"],
     links: [
-      { label: "Client Portal", type: "external", url: "https://family-spa-system.web.app" },
-      { label: "Admin Dashboard", type: "external", url: "https://admin-familyspasystem.web.app/admin/dashboard" }
+      { label: "Demo Video", type: "video", url: "https://www.youtube.com/watch?v=w7qwkPvChRY" }
+    ]
+  },
+  {
+    title: "Techcora Education Software",
+    description: "Complete school management platform with student records, grades, and parent communication.",
+    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop",
+    category: "Software",
+    status: "Launched",
+    tags: ["EdTech", "Management", "Cloud"],
+    links: [
+      { label: "Website", type: "external", url: "https://education.techcora.in/" },
+      { label: "Demo Video", type: "video", url: "https://www.youtube.com/watch?v=oo928Q58oss&list=PLvQ3ckclYs5Zd1MMXc00k4xpcnt1FAXt_" }
     ]
   },
   {
@@ -27,6 +38,18 @@ const projects = [
     ]
   },
   {
+    title: "Techcora Salon Software",
+    description: "Comprehensive salon management system with client booking, inventory management, and staff scheduling.",
+    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=400&fit=crop",
+    category: "Software",
+    status: "Launched",
+    tags: ["SAAS", "Management", "Cloud"],
+    links: [
+      { label: "Client Portal", type: "external", url: "https://family-spa-system.web.app" },
+      { label: "Admin Dashboard", type: "external", url: "https://admin-familyspasystem.web.app/admin/dashboard" }
+    ]
+  },
+  {
     title: "Techcora Attendance Management System",
     description: "Enterprise-grade attendance tracking and workforce management solution for companies.",
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop",
@@ -35,18 +58,6 @@ const projects = [
     tags: ["HR Tech", "Enterprise", "Automation"],
     links: [
       { label: "Demo Video", type: "video", url: "https://www.youtube.com/watch?v=wUYy7N6BNvs&list=PLvQ3ckclYs5ayMg9aSh7eRGXwegyY0qLE" }
-    ]
-  },
-  {
-    title: "Techcora Education Software",
-    description: "Complete school management platform with student records, grades, and parent communication.",
-    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop",
-    category: "Software",
-    status: "Launched",
-    tags: ["EdTech", "Management", "Cloud"],
-    links: [
-      { label: "Website", type: "external", url: "https://education.techcora.in/" },
-      { label: "Demo Video", type: "video", url: "https://www.youtube.com/watch?v=oo928Q58oss&list=PLvQ3ckclYs5Zd1MMXc00k4xpcnt1FAXt_" }
     ]
   },
   {
